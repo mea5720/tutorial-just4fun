@@ -9,9 +9,14 @@ public class DateStuff {
         Calendar cal = Calendar.getInstance();
         cal.add(Calendar.MONTH, 1);
         Date date = cal.getTime();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("'NadaChromeMap_'yyyyMMM'.zip'");
-        String strDate = simpleDateFormat.format(date);
+
+        String strDate = nadaChromMapFtpFileName(date);
         System.out.println("strDate: '" + strDate + "'");
         System.out.println("\"NadaChromeMap_2020Nov.zip\".equals(strDate): " + "NadaChromeMap_2020Nov.zip".equals(strDate));
+    }
+
+    static String nadaChromMapFtpFileName(Date date) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("'NadaChromeMap_'yyyyMMM'.zip'");
+        return simpleDateFormat.format(date);
     }
 }
