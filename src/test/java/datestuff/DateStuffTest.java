@@ -11,10 +11,11 @@ public class DateStuffTest {
     @Test
     public void nadaChromMapFtpFileName() {
         Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.MONTH, 1);
+        cal.set(Calendar.MONTH, Calendar.JUNE);
+        cal.set(Calendar.YEAR, 2020);
         Date date = cal.getTime();
 
         String strDate = DateStuff.nadaChromMapFtpFileName(date);
-        assertEquals("NadaChromeMap_2020Dec.zip", strDate);
+        assertEquals("NadaChromeMap_2020Jun.zip", strDate);
     }
 }
